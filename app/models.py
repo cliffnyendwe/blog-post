@@ -54,7 +54,7 @@ class Post(db.Model):
 
     @classmethod
     def get_posts(cls,category):
-        posts = Post.query.filter_by(post_category = category).order_by(Post.post_time.desc()).all()
+        post = Post.query.filter_by(post_category = category).order_by(Post.post_time.desc()).all()
         print(posts)
         return posts
 
