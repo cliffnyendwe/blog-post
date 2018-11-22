@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+<!-- content block -->
+
+{% block content %}
+<div id="category">
+  <h2>Welcome to {{category | title }}</h2>
+  <a class="btn btn-warning text-center " href="{{url_for('main.new_post', pitch_name=pitch)}}">
+  </span>Blog out</a>
+  
+
+
+  {% for post in posts %}
+  
+      <div class="panel-heading">
+        <h3 class="panel-title">{{post.post_title}}</h3>
+      </div>
+      <div class="panel-body"  style = "background-color: black">
+          <p class='firstletter' >{{post.post_text}}</p>
+      </div>
+    <div class="panel-footer"><a class="btn btn-warning text-center" style = "width:20%" href="{{url_for('main.view_post', id=post.id)}}">Comments</a></div>
+  </div>
+  {% endfor %}
+
+{% endblock %}

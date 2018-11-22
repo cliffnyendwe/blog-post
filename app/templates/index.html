@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/index.css')}}">
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<h1>WELCOME TO BLOG [POST,A PLACE WHERE YOU CAN POST FREELLY</h1>
+<hr>
+<br><br>
+<p style="text-align: center">An application that enables one to chose the blog they want to post.</p>
+<br>
+<p style="text-align: center">Select your blog and happy time as you post</p>
+
+<br>
+
+{% endblock%}
