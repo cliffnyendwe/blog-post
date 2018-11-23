@@ -1,4 +1,4 @@
-{% extends 'base.html'%}
+<!-- {% extends 'base.html'%}
 
 {% block styles%}
 {{ super() }}
@@ -9,14 +9,51 @@
 
 
 {% block content %}
+<div class="container">
+    <h1>WELCOME TO BLOG POST,A PLACE WHERE YOU CAN POST FREELLY</h1>
+    <hr>
+    <br><br>
+    <p>An application that enables one to chose the blog they want to post.</p>
+    <br>
+    <p>Select your blog and happy time as you post</p>
 
-<h1>WELCOME TO BLOG POST,A PLACE WHERE YOU CAN POST FREELLY</h1>
-<hr>
-<br><br>
-<p>An application that enables one to chose the blog they want to post.</p>
-<br>
-<p>Select your blog and happy time as you post</p>
+    <br>
+</div>
+{% endblock%} -->
 
-<br>
 
-{% endblock%}
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div id="category">
+    <h2>Welcome to Blog</h2>
+    <a class="btn btn-primary text-center " href="{{url_for('main.new_post')}}"><span class="glyphicon glyphicon-plus"
+            aria-hidden="true"></span> Add Blog Post</a>
+    <hr>
+
+    <h3>Blog Posts:</h3>
+
+    {% for post in posts %}
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{post.post_title}}</h3>
+        </div>
+        <div class="panel-body">
+            <p class='firstletter'>{{post.post_text}}</p>
+        </div>
+        {% if current_user.is_authenticated %}
+        <div class="panel-footer">
+            <a class="btn btn-primary text-center" href="{{url_for('main.view_post', id=post.id)}}">View Comments</a>
+            <a class="btn btn-info text-center" href="{{url_for('main.update_post', id=post.id)}}">Update Post</a>
+            <a class="btn btn-danger text-center" href="{{url_for('main.delete_post', id=post.id)}}">Delete Post</a>
+        </div>
+
+        {% else %}
+        <div class="panel-footer"><a class="btn btn-primary text-center" href="{{url_for('main.view_post', id=post.id)}}">View
+                Comments</a></div>
+        {%endif%}
+    </div>
+    {% endfor %}
+
+    {% endblock %}

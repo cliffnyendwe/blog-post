@@ -1,6 +1,31 @@
+# from flask_wtf import FlaskForm
+# from wtforms import StringField,TextAreaField,SubmitField, SelectField
+# from wtforms.validators import Required, DataRequired
+
+
+# class UpdateProfile(FlaskForm):
+#     bio = TextAreaField('Tell us about you.',validators = [DataRequired()])
+#     submit = SubmitField('Submit')
+
+
+# class PostForm(FlaskForm):
+#     pitch = SelectField('pitch',choices=[('pickup lines','pickup lines'),('interview pitch','interview pitch'),('product pitch','product pitch')])
+#     title = StringField('Post title',validators=[DataRequired()])
+#     post = TextAreaField('Write your post',validators=[DataRequired()])
+#     submit = SubmitField('submit')
+
+# class CommentForm(FlaskForm):
+#     comment = TextAreaField('Write your comment',validators=[DataRequired()])
+#     submit = SubmitField('submit')
+
+# class SubscribeForm(FlaskForm):
+#     username = StringField('Your Name', validators=[DataRequired()])
+#     email = StringField('Your Email Address',validators=[Required()])
+#     submit = SubmitField('Submit')
+
 from flask_wtf import FlaskForm
 from wtforms import StringField,TextAreaField,SubmitField, SelectField
-from wtforms.validators import Required, DataRequired
+from wtforms.validators import Required, DataRequired, Email
 
 
 class UpdateProfile(FlaskForm):
@@ -9,16 +34,17 @@ class UpdateProfile(FlaskForm):
 
 
 class PostForm(FlaskForm):
-    pitch = SelectField('pitch',choices=[('pickup lines','pickup lines'),('interview pitch','interview pitch'),('product pitch','product pitch')])
     title = StringField('Post title',validators=[DataRequired()])
     post = TextAreaField('Write your post',validators=[DataRequired()])
-    submit = SubmitField('submit')
+    submit = SubmitField('Submit')
+
 
 class CommentForm(FlaskForm):
     comment = TextAreaField('Write your comment',validators=[DataRequired()])
-    submit = SubmitField('submit')
+    submit = SubmitField('Submit')
+
 
 class SubscribeForm(FlaskForm):
     username = StringField('Your Name', validators=[DataRequired()])
-    email = StringField('Your Email Address',validators=[Required()])
+    email = StringField('Your Email Address',validators=[Required(),Email()])
     submit = SubmitField('Submit')
