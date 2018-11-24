@@ -1,3 +1,3 @@
 Hello {{user.username}}
-Welcome to pitch
-We have just seen you have signed up for our application and want to welcome you to the family. Please enjoy the reviews of all your  favourite films.
+Welcome to blog
+We have just seen you have signed up for our application and want to welcome you to the family. Please enjoy the blogs and don't foret to subsribe before you blog out.
