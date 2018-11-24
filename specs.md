@@ -32,8 +32,8 @@ Version: **1.0 **
 
 + The app must be secure to use in environments that lack support for Security. This is by use of SECRET_KEY which will prevent CrossSiteOriginForgery
 #
-* You can also choose to use the live link Steps 1. With a browser of your choice, Visit https://git.heroku.com/cliffnews254.com 2. Onload, the page displays news sources(Channels"). 3. Click on any channel you woud like to read news from. 4. You will be presented with various articles from the news source. 5. Click any that you find interesting.
-* You can also choose to use the live link Steps 1. With a browser of your choice, Visit https://git.heroku.com/cliffnews254.com 2. Onload, the page displays news sources(Channels"). 3. Click on any channel you woud like to read news from. 4. You will be presented with various articles from the news source. 5. Click any that you find interesting.# 2. System overview
+* You can also choose to use the live link Steps 1. With a browser of your choice, Visit https://cliff-blog.herokuapp.com/ 2. Onload, the page displays news sources(Channels"). 3. Click on any channel you woud like to read news from. 4. You will be presented with various articles from the news source. 5. Click any that you find interesting.
+* You can also choose to use the live link Steps 1. With a browser of your choice, Visit https://cliff-blog.herokuapp.com/ 2. Onload, the page displays news sources(Channels"). 3. Click on any channel you woud like to read news from. 4. You will be presented with various articles from the news source. 5. Click any that you find interesting.# 2. System overview
 The News Web ultimately provides a comfortable and friendly method of obtaining trusted news around the world. This app targets everyone around the world since it is easy to use.
 
 ## 2.1 How the system works

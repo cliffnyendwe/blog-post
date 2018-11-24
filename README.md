@@ -16,11 +16,11 @@ Blog application is a programme where individuals can write thier blogs,be able 
 * As a writer one can update or delete blogs they have created.
 
 # Github-link
-https://pitch5.herokuapp.com/
+https://git.heroku.com/cliff-blog.git
 
 # Live Demo
 
-Run this url link:https://pitch5.herokuapp.com/
+Run this url link:https://cliff-blog.herokuapp.com/
 # Contacts
 To find me, use: cliffnyendwe2018@gmail.com
 0710755176
@@ -46,8 +46,8 @@ Bootstrap
 * python3.6 -m venv virtual
 * source virtual/bin/activate
 
-# Installing dependencies
-## pip3 install -r requirements
+# pip3 install -r requirements
+
 The following libraries are required
 
 click==6.7
@@ -67,7 +67,7 @@ pkg-resources==0.0.0
 
 # Installation Requirements
 
-* Open the live site at https://peachblog.herokuapp.com/
+* Open the live site at https://git.heroku.com/cliff-blog.git
 * Once you visit the site, you'll see blog posts submitted by writers.
 * You can tap on the 'View Comments' button to view an individual blog post along with its comments.
 * To submit a blog post or comment on a blog post you must log in, tap on the 'Log In' button on the navbar to log in.
@@ -77,8 +77,7 @@ pkg-resources==0.0.0
 * As a writer you can also update and/or delete your blog posts.
 
 # Live Demo
-The web app can be accessed from the following link https://git.heroku.com/pitch5.git
-
+The web app can be accessed from the following link https://git.heroku.com/cliff-blog.git
 # License
 The project is under license by MIT
 
