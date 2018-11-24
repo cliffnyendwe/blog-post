@@ -1,20 +1,19 @@
 # MY PITCH
-By Cliff Nyendwe, 17/11/2018
+By Cliff Nyendwe, 24/11/2018
 
 # Description
-My pitch is an application that allows users to regester an account and sign in afterwards they can comment on various pitch.
+Blog application is a programme where individuals can write thier blogs,be able to comment on them,update them and even delete them.It also gives users and writers an opportunity to subscribe and even sihn up or sign in.
 
 # Specs of the program
 
-
-* Users can see the pitches other people have posted.
-* Users can be signed in for me to leave a comment.
-* Users can receive a welcoming email once they sign up.
-* Users can view the pitches they have created in my profile page.
-* Users can comment on the different pitches and leave feedback.
-* Users can submit a pitch in any category.
-* Users can view the different categories.
-
+* As a user one can view the blog posts submitted
+* As a user one can comment on blog posts
+* As a user one can view the most recent posts
+* As a user one can be alerted when a new post is made by joining a  subscription.
+* As a writer one can sign in to the blog.
+* As a writer one can create a blog from the application.
+* As a writer one can delete comments that they find insulting or degrading.
+* As a writer one can update or delete blogs they have created.
 
 # Github-link
 https://pitch5.herokuapp.com/
@@ -32,7 +31,7 @@ Kindly to access code clone the repository.
 
 # Motivation
 
-To make it easy for people to access all kind of news in all field,to educate and alert people on whats going on locally and accross the board.
+To make it easy for people to access all kind of blogs in all field,to educate and alert people on whats going on locally and accross the board.
 
 # Language used
 
