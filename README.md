@@ -1,4 +1,4 @@
-# MY PITCH
+# BLOG
 By Cliff Nyendwe, 24/11/2018
 
 # Description
@@ -64,6 +64,17 @@ visitor==0.1.3
 Werkzeug==0.12.2
 WTForms==2.1
 pkg-resources==0.0.0
+
+# Installation Requirements
+
+* Open the live site at https://peachblog.herokuapp.com/
+* Once you visit the site, you'll see blog posts submitted by writers.
+* You can tap on the 'View Comments' button to view an individual blog post along with its comments.
+* To submit a blog post or comment on a blog post you must log in, tap on the 'Log In' button on the navbar to log in.
+* If it's the first time using the site, first register before you log in.
+* Once you log in you can now write a blog or leave feedback on other writers' blog posts.
+* As a writer you can moderate the comments on your blog posts by deleting them.
+* As a writer you can also update and/or delete your blog posts.
 
 # Live Demo
 The web app can be accessed from the following link https://git.heroku.com/pitch5.git
