@@ -1,5 +1,12 @@
+
+.infinity {
+    animation-iteration-count: infinite;
+}
+
 .blog{
     text-align: center;
     font-size:x-large;
     margin-top:60px;
+    border-radius:50%;
 }
+

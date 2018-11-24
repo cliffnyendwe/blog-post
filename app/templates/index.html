@@ -2,10 +2,10 @@
 
 {% block content %}
 <div id="blog">
-    <h1 style="text-align:center">Welcome to Blog</h1>
+    <h1 class="animated rotateIn " style="text-align:center;padding-top:60px">Welcome to Blog</h1>
     <div class="blog">
-        <a class="btn btn-primary " href="{{url_for('main.new_post')}}"><span class="glyphicon glyphicon-emoji"
-                aria-hidden="true"></span>Blog out</a>
+        <p class="animated fadeInUpBig"><a class="btn btn-primary " href="{{url_for('main.new_post')}}"><span class="glyphicon glyphicon-smiling"
+                aria-hidden="true"></span>Blog out</a></p>
     </div>
    
 
@@ -19,9 +19,9 @@
         </div>
         {% if current_user.is_authenticated %}
         <div class="panel-footer">
-            <a class="btn btn-primary text-center" href="{{url_for('main.view_post', id=post.id)}}">View Comments</a>
-            <a class="btn btn-info text-center" href="{{url_for('main.update_post', id=post.id)}}">Update Post</a>
-            <a class="btn btn-danger text-center" href="{{url_for('main.delete_post', id=post.id)}}">Delete Post</a>
+            <a class="btn btn-primary text-center" style ="font-size:large" href="{{url_for('main.view_post', id=post.id)}}">View Comments</a>
+            <a class="btn btn-primary text-center" style ="font-size:large" href="{{url_for('main.update_post', id=post.id)}}">Update Post</a>
+            <a class="btn btn-primary text-center" style ="font-size:large" href="{{url_for('main.delete_post', id=post.id)}}">Delete Post</a>
         </div>
 
         {% else %}

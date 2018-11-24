@@ -6,15 +6,11 @@ from flask_login import login_required, current_user
 from .. import db, photos
 from .. email import mail_message
 
-
 @main.route('/')
 def index():
-  
-  title = 'Home - Welcome to Peach Blog'
+  title = 'Home - Welcome to Blog'
   posts = Post.get_posts()
-
   return render_template('index.html', title = title, posts = posts)
-
 
 @main.route('/post/new', methods = ['GET','POST']) 
 @login_required
@@ -30,13 +26,11 @@ def new_post():
     users = Subscriber.query.all()
     for user in users:
         print(user.email)
-        mail_message("New Post on Peach Blog","email/sub_alert",user.email,user=user)  
-
+        mail_message("New Post on Blog","email/sub_alert",user.email,user=user,subscriber=subscriber)  
     return redirect(url_for('.index'))
 
   title = 'New Post'
   return render_template('new_posts.html', title= title, form= form)
-
 
 @main.route('/post/comments/new/<int:id>', methods = ['GET', 'POST'])
 def new_comment(id):
@@ -54,7 +48,6 @@ def new_comment(id):
   title = 'New Comment'
   return render_template('new_comments.html', title= title, form= form)
 
-
 @main.route('/post/comment/delete/<int:id>', methods=['GET', 'POST'])
 @login_required
 def delete_comment(id):
@@ -65,7 +58,6 @@ def delete_comment(id):
     print(post_id)
     return redirect(url_for('.view_post',id=post_id))
 
-
 @main.route('/post/view/<int:id>', methods=['GET', 'POST'])
 def view_post(id):
     test = id
@@ -75,14 +67,12 @@ def view_post(id):
     comments = Comment.get_comments(id)
     return render_template('view.html',post=post, comments=comments, id=id)
 
-
 @main.route('/post/delete/<int:id>', methods=['GET', 'POST'])
 @login_required
 def delete_post(id):  
     Post.delete_post(id)
 
     return redirect(url_for('.index'))
-
 
 @main.route('/post/update/<int:id>', methods=['GET', 'POST'])
 @login_required
@@ -100,7 +90,6 @@ def update_post(id):
     title = 'Update Post'
     return render_template('new_posts.html', title= title, form= form)
 
-
 @main.route('/subscribe',methods = ["GET","POST"])
 def subscribe():
     form = SubscribeForm()
@@ -115,7 +104,6 @@ def subscribe():
     title = "New Subscription"
     return render_template('subscribe.html',form = form, title= title)
 
-
 @main.route('/user/<uname>')
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
@@ -127,7 +115,6 @@ def profile(uname):
 
     return render_template('profile/profile.html',user = user,posts=posts)
 
-
 @main.route('/user/<uname>/update', methods=['GET', 'POST'])
 def update_profile(uname):
     user = User.query.filter_by(username = uname).first()
@@ -138,14 +125,12 @@ def update_profile(uname):
     
     if form.validate_on_submit():
         user.bio = form.bio.data
-
         db.session.add(user)
         db.session.commit()
 
         return redirect(url_for('.profile',uname = user.username))
 
-    return render_template('profile/update.html',form = form)
-    
+    return render_template('profile/update.html',form = form)    
 
 @main.route('/user/<uname>/update/pic', methods=['POST'])
 @login_required
