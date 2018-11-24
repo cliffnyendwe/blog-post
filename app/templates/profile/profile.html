@@ -2,41 +2,50 @@
 
 {% block content %}
 <div class="container">
+    <h1>YOUR PROFILE</h1>
     <div class="row">
-        <!-- displaying  Username-->
-        <div class="col-md-4">
-            <h3> {{user.username| capitalize}} </h3>
-
-            <!--Displaying user bio-->
+        <h1 style="color:white"> {{user.username| capitalize}} </h1>
+        <!--Displaying user bio-->
+        <div class="col-md-6">
             {% if user.bio %}
             <p> {{user.bio}}</p>
             {%else%}
-            <p> {{user.username| capitalize}} has no bio </p>
+            <p style="color:white"> {{user.username| capitalize}} has no bio </p>
             {% endif %}
         </div>
-
-        <!--Display profile photo-->
-        <div class="col-md-4">
-
+        <div class="col-sm-6">
             {% if user.profile_pic_path %}
-            <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail">
+            <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail" style="text-align: center">
             {%else%}
-            <p>No profile picture</p>
+            <p style="color:white">No profile picture</p>
             {% endif %}
+        </div>
+        <div class="col-sm-6">
             {% if user == current_user %}
             <form action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
 
                 <input type="file" name="photo" class="form-control" required>
-                <input type="submit">
+                <br>
+                <input class="btn btn-primary text-center" type="submit">
             </form>
             {% endif %}
         </div>
+        <div class="col-sm-6">
+            {% if user == current_user %}
+            <a class="btn btn-primary text-center" href="{{url_for('main.update_profile',uname=user.username)}}">Edit
+                profile</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-sm-4">
+        {% for post in posts %}
+        <h3>{{post.post_title}}</h3>
+        <p>{{post.post_text}}</p>
+        <div class="panel-footer"><a class="btn btn-primary text-center" href="{{url_for('main.new_post', id=post.id)}}">Add
+                comment</a>
+        </div>
+
+        {% endfor %}
     </div>
 </div>
-{% if user == current_user %}
-<a href="{{url_for('main.update_profile',uname=user.username)}}">Edit profile</a>
-{% endif %}
-
-<br>
-
 {% endblock %}
