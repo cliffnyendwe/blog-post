@@ -1,34 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div id="blog">
+<div class="container">
     <h1 class="animated rotateIn " style="text-align:center;padding-top:60px">Welcome to Blog</h1>
     <div class="blog">
         <p class="animated fadeInUpBig"><a class="btn btn-primary " href="{{url_for('main.new_post')}}"><span class="glyphicon glyphicon-smiling"
-                aria-hidden="true"></span>Blog out</a></p>
+                    aria-hidden="true"></span>Blog out</a></p>
     </div>
-   
 
-    {% for post in posts %}
-    <div class="panel panel-primary">
+    <div class="row">
+       
+            {% for post in posts %}
+            <div class="panel panel-primary" style="width:35.5%">
 
-        <h3 class="panel-title">{{post.post_title}}</h3>
+                <h3>{{post.post_title}}</h3>
+                <p>{{post.post_text}}</p>
+                {% if current_user.is_authenticated %}
+                <a class="btn btn-primary text-center" style="font-size:large" href="{{url_for('main.view_post', id=post.id)}}">View
+                    Comments</a>
+                <a class="btn btn-primary text-center" style="font-size:large" href="{{url_for('main.update_post', id=post.id)}}">Update
+                    Post</a>
+                <a class="btn btn-primary text-center" style="font-size:large" href="{{url_for('main.delete_post', id=post.id)}}">Delete
+                    Post</a>
 
-        <div class="panel-body">
-            <p class='firstletter'>{{post.post_text}}</p>
+
+                {% else %}
+                <a class="btn btn-primary text-center" href="{{url_for('main.view_post', id=post.id)}}">View
+                    Comments</a>
+                {%endif%}
+           
         </div>
-        {% if current_user.is_authenticated %}
-        <div class="panel-footer">
-            <a class="btn btn-primary text-center" style ="font-size:large" href="{{url_for('main.view_post', id=post.id)}}">View Comments</a>
-            <a class="btn btn-primary text-center" style ="font-size:large" href="{{url_for('main.update_post', id=post.id)}}">Update Post</a>
-            <a class="btn btn-primary text-center" style ="font-size:large" href="{{url_for('main.delete_post', id=post.id)}}">Delete Post</a>
-        </div>
+        {% endfor %}
 
-        {% else %}
-        <div class="panel-footer"><a class="btn btn-primary text-center" href="{{url_for('main.view_post', id=post.id)}}">View
-                Comments</a></div>
-        {%endif%}
     </div>
-    {% endfor %}
-
     {% endblock %}

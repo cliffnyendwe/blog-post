@@ -1,23 +1,24 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<div class="container">
+<div class="container" style="background-color:#e8f5e9">
     <h1>YOUR PROFILE</h1>
     <div class="row">
-        <h1 style="color:white"> {{user.username| capitalize}} </h1>
+        <h1 style="color:black"> {{user.username| capitalize}} </h1>
         <!--Displaying user bio-->
         <div class="col-md-6">
             {% if user.bio %}
             <p> {{user.bio}}</p>
             {%else%}
-            <p style="color:white"> {{user.username| capitalize}} has no bio </p>
+            <p style="color:black"> {{user.username| capitalize}} has no bio </p>
             {% endif %}
         </div>
-        <div class="col-sm-6">
+        <br>
+        <div class="col-sm-4">
             {% if user.profile_pic_path %}
             <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail" style="text-align: center">
             {%else%}
-            <p style="color:white">No profile picture</p>
+            <p style="color:black">No profile picture</p>
             {% endif %}
         </div>
         <div class="col-sm-6">

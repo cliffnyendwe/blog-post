@@ -26,7 +26,7 @@ def new_post():
     users = Subscriber.query.all()
     for user in users:
         print(user.email)
-        mail_message("New Post on Blog","email/sub_alert",user.email,user=user,subscriber=subscriber)  
+        mail_message("New Post on Blog","email/sub_alert",user.email,user=user)  
     return redirect(url_for('.index'))
 
   title = 'New Post'
@@ -74,6 +74,7 @@ def delete_post(id):
 
     return redirect(url_for('.index'))
 
+
 @main.route('/post/update/<int:id>', methods=['GET', 'POST'])
 @login_required
 def update_post(id):
@@ -90,6 +91,7 @@ def update_post(id):
     title = 'Update Post'
     return render_template('new_posts.html', title= title, form= form)
 
+
 @main.route('/subscribe',methods = ["GET","POST"])
 def subscribe():
     form = SubscribeForm()
@@ -104,6 +106,7 @@ def subscribe():
     title = "New Subscription"
     return render_template('subscribe.html',form = form, title= title)
 
+
 @main.route('/user/<uname>')
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
@@ -115,6 +118,7 @@ def profile(uname):
 
     return render_template('profile/profile.html',user = user,posts=posts)
 
+
 @main.route('/user/<uname>/update', methods=['GET', 'POST'])
 def update_profile(uname):
     user = User.query.filter_by(username = uname).first()
@@ -125,12 +129,14 @@ def update_profile(uname):
     
     if form.validate_on_submit():
         user.bio = form.bio.data
+
         db.session.add(user)
         db.session.commit()
 
         return redirect(url_for('.profile',uname = user.username))
 
-    return render_template('profile/update.html',form = form)    
+    return render_template('profile/update.html',form = form)
+    
 
 @main.route('/user/<uname>/update/pic', methods=['POST'])
 @login_required

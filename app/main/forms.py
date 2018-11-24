@@ -9,8 +9,8 @@ class UpdateProfile(FlaskForm):
 
 
 class PostForm(FlaskForm):
-    title = StringField('Post title',validators=[DataRequired()])
-    post = TextAreaField('Write your post',validators=[DataRequired()])
+    title = StringField('Blog title',validators=[DataRequired()])
+    post = TextAreaField('Write your blog',validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 
