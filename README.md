@@ -19,8 +19,8 @@ Blog application is a programme where individuals can write thier blogs,be able 
 https://git.heroku.com/cliff-blog.git
 
 # Live Demo
-
 Run this url link:https://cliff-blog.herokuapp.com/
+
 # Contacts
 To find me, use: cliffnyendwe2018@gmail.com
 0710755176
@@ -76,8 +76,6 @@ pkg-resources==0.0.0
 * As a writer you can moderate the comments on your blog posts by deleting them.
 * As a writer you can also update and/or delete your blog posts.
 
-# Live Demo
-The web app can be accessed from the following link https://git.heroku.com/cliff-blog.git
 # License
 The project is under license by MIT
 
